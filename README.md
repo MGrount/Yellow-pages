@@ -20,6 +20,7 @@ To run the project, Docker and Docker Compose are required. Follow the steps bel
 ### Prerequisites
 
 - [Docker](https://www.docker.com/)
+- [Postman](https://www.postman.com/)
 
 ### Installation
 
@@ -34,7 +35,16 @@ To run the project, Docker and Docker Compose are required. Follow the steps bel
 
 ### Usage
 
-Access the application by opening the HTML file located in the frontend folder.
+* Access the application by opening the HTML file located in the frontend folder.
+
+* Or use postman to test the single API Http POST (http://localhost:3000/api/parseUserInput) with the following object:
+    {
+    "userInput": "Inster query HERE",
+    "limit": 10,
+    "offset": 0
+    }
+    
+* the "limit" and "offset" are responsible for batching the query, the program set to 10 as a default.    
 
 ### Assumptions
 
