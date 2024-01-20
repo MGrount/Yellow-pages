@@ -39,6 +39,7 @@ To run the project, Docker and Docker Compose are required. Follow the steps bel
 * Access the application by opening the HTML file located in the frontend folder.
 
 * Or use postman to test the single API Http POST (http://localhost:3000/api/parseUserInput) with the following object:
+    ```bash
     {
     "userInput": "Inster query HERE",
     "limit": 10,
