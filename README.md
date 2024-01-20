@@ -11,8 +11,6 @@ A simple Yellow Pages application with search functionality.
 - [Assumptions](#assumptions)
 - [Key Features](#key-features)
 - [Points to Improve](#points-to-improve)
-- [Contributing](#contributing)
-- [License](#license)
 - [Acknowledgments](#acknowledgments)
 
 ## Getting Started
@@ -38,7 +36,7 @@ To run the project, Docker and Docker Compose are required. Follow the steps bel
 
 Access the application by opening the HTML file located in the frontend folder.
 
-Assumptions
+### Assumptions
 
 During the development of this project, the following assumptions were made:
 
@@ -61,11 +59,9 @@ Areas for improvement include:
 * Enhancing the user interface for a better user experience.
 * Exploring more efficient SQL solutions, such as sharding and improved indexes, to optimize querying performance.
 
-
-
 This project is licensed under the [Rapid7] - see the LICENSE.md file for details.
 
-Acknowledgments
+### Acknowledgments
 
 The project makes use of the following technologies and patterns:
 
