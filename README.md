@@ -85,6 +85,7 @@ Areas for improvement include:
 * Better error handling and creating a global error handling mechanism
 * Caching mechanism
 * Metrics for measuring KPIs
+* Implementing proper DI and Middleware
 
 This project is licensed under the [Rapid7] - see the LICENSE.md file for details.
 
