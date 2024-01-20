@@ -68,7 +68,8 @@ During the development of this project, the following assumptions were made:
 * A rules class allows easy switching and addition of search rules/filters.
 * Indexes were added to init-data.sql to optimize queries.
 * The strategy design pattern and factory were employed for enhanced modularity.
-* A generic solution
+* Parsing the contacts.json file into the PostgreSQL on docker init so additional info coud be added.
+* A generic solution.
 
 ### Points to Improve
 
