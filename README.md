@@ -58,15 +58,16 @@ During the development of this project, the following assumptions were made:
 
 * Contacts can be searched by name, phone number, and birthday, and any combination of these criteria. However, searches based on address and picture are not supported.
 * Limited UI enhancements were made due to time constraints.
-* Indexes were added to init-data.sql to optimize queries.
-* The strategy design pattern and factory were employed for enhanced modularity.
-* A rules class allows easy switching and addition of search rules/filters.
 * A single unit test was implemented for parsing to save time.
 
 ### Key Features
 
 * Database: PostgreSQL is used for data storage.
 * Containerization: Docker is utilized to create a container for the Node.js server and import contacts.json into the database.
+* A rules class allows easy switching and addition of search rules/filters.
+* Indexes were added to init-data.sql to optimize queries.
+* The strategy design pattern and factory were employed for enhanced modularity.
+* A generic solution
 
 ### Points to Improve
 
