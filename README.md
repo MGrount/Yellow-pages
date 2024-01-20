@@ -41,7 +41,7 @@ To run the project, Docker and Docker Compose are required. Follow the steps bel
 * Or use postman to test the single API Http POST (http://localhost:3000/api/parseUserInput) with the following object:
     ```bash
     {
-    "userInput": "Inster query HERE",
+    "userInput": "Insert query HERE",
     "limit": 10,
     "offset": 0
     }
@@ -57,6 +57,7 @@ To run the project, Docker and Docker Compose are required. Follow the steps bel
 During the development of this project, the following assumptions were made:
 
 * Contacts can be searched by name, phone number, and birthday, and any combination of these criteria. However, searches based on address and picture are not supported.
+* When a user enters an Age in the text bar the parser will calculate his birthday as he was born on January 1st, so there might be a rounding error.
 * Limited UI enhancements were made due to time constraints.
 * A single unit test was implemented for parsing to save time.
 
