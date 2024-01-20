@@ -58,6 +58,7 @@ Areas for improvement include:
 
 * Enhancing the user interface for a better user experience.
 * Exploring more efficient SQL solutions, such as sharding and improved indexes, to optimize querying performance.
+* Making more queries like with combiation of an address
 
 This project is licensed under the [Rapid7] - see the LICENSE.md file for details.
 
