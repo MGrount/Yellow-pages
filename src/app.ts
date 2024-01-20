@@ -2,11 +2,15 @@ import { Request, Response, NextFunction } from 'express';
 import { json } from 'body-parser';
 import { parseUserInput } from './controllers/contact-controller';
 import express = require('express');
+import cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(json());
+
+// Enable CORS for all routes
+app.use(cors());
 
 // Define your routes
 app.post('/api/parseUserInput', parseUserInput);

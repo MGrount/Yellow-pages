@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css.css" />
+  <title>Search Page</title>
+  <style>
+    /* Add the provided CSS styles here */
+    * {
+      font-family: "verdana";
+    }
+
+    .container {
+      border: 1px solid #E1E1E1;
+      width: 100%;
+      float: left;
+    }
+
+    .sub-container {
+      float: left;
+      margin: 30px 10px;
+    }
+
+    .user-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      float: left;
+      margin: 10px 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Type your search...">
+    <button onclick="performSearch()">Search</button>
+    <button onclick="previousPage()">Previous Page</button>
+    <button onclick="nextPage()">Next Page</button>
+  </div>
+
+  <div id="resultsContainer">
+    <!-- Result items will be displayed here -->
+  </div>
+
+  <script>
+    var offset = 0; // Variable to store the current offset
+
+    function performSearch() {
+      // Get the value from the search input
+      var searchQuery = document.getElementById("searchInput").value;
+
+      // Prepare the request body
+      var requestBody = {
+        userInput: searchQuery,
+        limit: 10,
+        offset: offset
+      };
+
+      // Perform a POST request to the specified API endpoint
+      fetch('http://localhost:3000/api/parseUserInput', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestBody),
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Handle the response data and update the DOM
+        if (data.success) {
+          displayResults(data.data);
+        } else {
+          displayError(data.error);
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        displayError('An unexpected error occurred.');
+      });
+    }
+
+    function nextPage() {
+      // Increment the offset and perform a new search
+      offset += 10; // Assuming each page displays 10 items
+      performSearch();
+    }
+
+    function previousPage() {
+      // Decrement the offset if it's greater than or equal to the limit
+      if (offset >= 10) {
+        offset -= 10;
+        performSearch();
+      }
+    }
+
+    function displayResults(results) {
+      var resultsContainer = document.getElementById("resultsContainer");
+      resultsContainer.innerHTML = ""; // Clear previous results
+
+      if (results && results.length > 0) {
+        results.forEach(result => {
+          var resultItem = document.createElement("div");
+          resultItem.className = "result-item";
+
+          // Create HTML content for each result item
+          resultItem.innerHTML = `
+            <img src="assets/images/${result.picture}" alt="${result.name}">
+            <div class="result-details">
+              <h3>${result.name}</h3>
+              <p>Birthday: ${result.birthday}</p>
+              <p>Address: ${result.address}</p>
+              <p>Phone Number: ${result.phone_number}</p>
+            </div>
+          `;
+
+          // Append the result item to the results container
+          resultsContainer.appendChild(resultItem);
+        });
+      } else {
+        resultsContainer.innerHTML = "<p>No results found.</p>";
+      }
+    }
+
+    function displayError(errorMessage) {
+      // Display error as a pop-up
+      alert(`Error: ${errorMessage}`);
+    }
+  </script>
+
+</body>
+</html>
