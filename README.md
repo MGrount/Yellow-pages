@@ -75,6 +75,9 @@ Areas for improvement include:
 * Enhancing the user interface for a better user experience.
 * Exploring more efficient SQL solutions, such as sharding and improved indexes, to optimize querying performance.
 * Making more queries like with combiation of an address
+* Parsing the file without script for modularity
+* Loading changed state without restarting the application
+* Parsing the file once by checking if it was changed
 
 This project is licensed under the [Rapid7] - see the LICENSE.md file for details.
 
