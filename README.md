@@ -46,7 +46,11 @@ To run the project, Docker and Docker Compose are required. Follow the steps bel
     "offset": 0
     }
 
-* the "limit" and "offset" are responsible for batching the query, the program set to 10 as a default.    
+* the "limit" and "offset" are responsible for batching the query, the program set to 10 as a default.
+
+* To run the unit tests use:
+    ```bash
+    npm test
 
 ### Assumptions
 
