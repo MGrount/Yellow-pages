@@ -31,6 +31,7 @@ To run the project, Docker and Docker Compose are required. Follow the steps bel
 
 
 2. Run Docker Compose:
+    ```bash
     docker-compose up
 
 ### Usage
@@ -43,7 +44,7 @@ To run the project, Docker and Docker Compose are required. Follow the steps bel
     "limit": 10,
     "offset": 0
     }
-    
+
 * the "limit" and "offset" are responsible for batching the query, the program set to 10 as a default.    
 
 ### Assumptions
