@@ -78,6 +78,9 @@ Areas for improvement include:
 * Parsing the file without script for modularity
 * Loading changed state without restarting the application
 * Parsing the file once by checking if it was changed
+* Better logging and creating a global loggin mechanism
+* Better error handling and creating a global error handling mechanism
+* Caching mechanism
 
 This project is licensed under the [Rapid7] - see the LICENSE.md file for details.
 
