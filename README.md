@@ -87,7 +87,7 @@ Areas for improvement include:
 * Metrics for measuring KPIs
 * Implementing proper DI and Middleware
 
-This project is licensed under the [Rapid7] - see the LICENSE.md file for details.
+This project is licensed under the [MIT] - see the LICENSE.md file for details.
 
 ### Acknowledgments
 

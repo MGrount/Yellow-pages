@@ -26,6 +26,7 @@ export class ContactRepository<T extends Contact> implements IContactRepository<
     private buildQuery<T extends Contact>(contact: T, limit: number, offset: number): string {
         const conditions = [];
         const queryParams = [];
+        let orderBy = '';
 
         if (contact.name) {
             const names = contact.name.split(' ').map(name => `%${name}%`);
@@ -33,6 +34,7 @@ export class ContactRepository<T extends Contact> implements IContactRepository<
 
             conditions.push(`(${nameConditions})`);
             queryParams.push(...names);
+            orderBy = 'name DESC';
         }
 
         if (contact.birthday) {
@@ -54,8 +56,9 @@ export class ContactRepository<T extends Contact> implements IContactRepository<
 
         // Combine all conditions with AND
         const combinedCondition = conditions.join(' AND ');
+        const queryWithOrderBy = `SELECT * FROM contacts WHERE ${combinedCondition} ORDER BY ${orderBy} LIMIT ${limit} OFFSET ${offset}`;
 
-        return `SELECT * FROM contacts WHERE ${combinedCondition} LIMIT ${limit} OFFSET ${offset}`;
+        return queryWithOrderBy;
     }
 
 
